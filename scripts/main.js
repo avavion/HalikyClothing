@@ -26,7 +26,7 @@ const scrollOff = () => {
   document.body.style.overflow = "hidden";
 };
 
-// TODO: Доработать модальное окно
+// TODO: Готово
 const modalWindow = (triggerSelector, modalSelector, closeSelector) => {
   const triggerButtons = document.querySelectorAll(triggerSelector),
     modal = document.querySelectorAll(modalSelector),
@@ -62,8 +62,28 @@ const modalWindow = (triggerSelector, modalSelector, closeSelector) => {
   });
 };
 
+// TODO: Сделать бургер меню
+
+const burgerMenu = (triggerSelector, menuSelector, closeSelector) => {
+  const openMenuButton = document.querySelector(triggerSelector),
+    menuWindow = document.querySelector(menuSelector),
+    closeButton = document.querySelector(closeSelector);
+
+  // Открыть меню
+  openMenuButton.addEventListener("click", () => {
+    scrollOff();
+    menuWindow.classList.add("main-aside-mobile--enable");
+  });
+
+  // Закрыть меню
+  closeButton.addEventListener("click", () => {
+    scrollOn();
+    menuWindow.classList.remove("main-aside-mobile--enable");
+  });
+};
+
 // Когда DOM дерево построится, то вызываем все функции
 window.addEventListener("DOMContentLoaded", () => {
   modalWindow(".main-grid-item", ".modal-overlay", ".modal-close");
-  console.log("DOM дерево готово!");
+  burgerMenu(".header-nav__burger", ".main-aside-mobile", ".main-aside-mobile__closeButton");
 });
