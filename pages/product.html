@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme" content="black" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="https://kit.fontawesome.com/5c55b6f969.js" crossorigin="anonymous"></script>
+    <title>Haliky - HOME</title>
+  </head>
+  <body>
+    <div class="background__image">
+      <header class="header" id="header">
+        <div class="container">
+          <nav class="header-nav">
+            <div class="header-nav__logo">
+              <a href="../index.html" class="header-nav__home">
+                <img src="../assets/logo.png" alt="Logotype" />
+              </a>
+            </div>
+            <div class="header-nav__wrap">
+              <div class="header-nav__cart">
+                <a href="cart.html" class="header-nav__cart-link">
+                  <img src="../assets/cart-sign.png" alt="Cart" />
+                </a>
+              </div>
+              <div class="burger header-nav__burger">
+                <i class="burger__line"></i>
+                <i class="burger__line"></i>
+                <i class="burger__line"></i>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+      <main class="main section" id="main">
+        <div class="container">
+          <div class="main-wrap">
+            <aside class="main-aside main-aside-mobile">
+              <div class="main-aside-mobile__closeButton">
+                <i class="fas fa-times"></i>
+              </div>
+              <nav class="main-nav main-aside-nav">
+                <ul class="main-nav__list main-aside-nav__list">
+                  <li class="main-nav__item main-aside-nav__item">
+                    <a href="#" class="main-nav__link main-aside-nav__link">Худи</a>
+                  </li>
+                  <li class="main-nav__item main-aside-nav__item">
+                    <a href="#" class="main-nav__link main-aside-nav__link">Футболки</a>
+                  </li>
+                </ul>
+                <ul class="main-nav__list main-aside-nav__list">
+                  <li class="main-nav__item main-aside-nav__item">
+                    <a href="#" class="main-nav__link main-aside-nav__link">Контакты</a>
+                  </li>
+                  <li class="main-nav__item main-aside-nav__item">
+                    <a href="#" class="main-nav__link main-aside-nav__link">Доставка</a>
+                  </li>
+                  <li class="main-nav__item main-aside-nav__item">
+                    <a href="#" class="main-nav__link main-aside-nav__link">Cutomer Care</a>
+                  </li>
+                </ul>
+                <ul class="main-nav__list main-aside-nav__list">
+                  <li class="main-nav__item main-aside-nav__item">
+                    <a href="#" class="main-nav__link main-aside-nav__link">Instagram</a>
+                  </li>
+                </ul>
+              </nav>
+            </aside>
+            <div class="main-content">
+              <div class="product">
+                <img src="../assets/example.png" alt="" class="product__img" />
+                <div class="product-item">
+                  <h2 class="product-item__title">HOME HOODIE</h2>
+                  <p class="product-item__price">6500 РУБ</p>
+
+                  <!-- Размеры -->
+                  <div class="product-item__variants"></div>
+
+                  <!-- Кнопки -->
+
+                  <a href="#" class="button button__secondary" id="buttonPickSize">Подберите свой размер</a>
+                  <a href="#" class="button button__primary">Добавить</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <footer class="footer" id="footer"></footer>
+
+      <div class="modal-overlay">
+        <div class="modal-window modal-pick-size">
+          <a href="#" class="button__close modal-close">
+            <i class="fas fa-times"></i>
+          </a>
+          <div class="modal">
+            <img src="../assets/example.png" alt="Товар">
+            <div class="modal-wrap modal-choose-size">
+              <div class="modal-header">
+                <h3 class="modal-header__title">
+                  Мы поможем вам найти нужный размер
+                </h3>
+                <p class="modal-header__subtitle modal__text">
+                  Мы подберем идеальный размер согласно вашим параметрам
+                </p>
+              </div>
+              <div class="modal-content">
+                <h3 class="modal-content__title">
+                  Измерения:
+                </h3>
+                <p class="modal-content__text modal__text">Ваш рост и вес:</p>
+    
+                <div class="modal-content-inputs">
+                  <div class="modal-content-input">
+                    <p class="modal-content-input__text">
+                      РОСТ
+                    </p>
+                    <input min="140" max="230" step="1" value="160" type="range" name="userHeight" id="heightInput" class="modal-content__input" />
+                    <p class="modal-content-input__size">
+                      <span id="modalHeightSize">140</span> СМ
+                    </p>
+                  </div>
+                  <div class="modal-content-input">
+                    <p class="modal-content-input__text">
+                      ВЕС
+                    </p>
+                    <input min="30" max="150" step="1" value="60" type="range" name="userWidth" id="widthInput" class="modal-content__input" />
+                    <p class="modal-content-input__size">
+                      <span id="modalWidthSize">30</span> КГ
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <a href="#" class="button button__secondary button__pickSize" id="modalShowSize">
+                  Определите ваш размер
+                </a>
+              </div>
+            </div>
+
+            <div class="modal-wrap modal-user-size">
+              <div class="modal-header">
+                <h3 class="modal-header__title">
+                  Ваш размер
+                </h3>
+                <p class="modal-header__subtitle modal__text" id="userSizeLabel">
+                  L
+                </p>
+              </div>
+              <div class="modal-content">
+                <p class="modal-content__text modal__text">Этот размер носят 85% покупателей с похожим ростом и весом.</p>
+              </div>
+              <div class="modal-footer">
+                <a href="#" class="button button__secondary" id="prevModalWindow">
+                  НАЧАТЬ СНАЧАЛА
+                </a>
+                <a href="#" class="button button__primary button__addToCart" id="modalShowSize">
+                  Добавить в корзину
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- Include JavaScript file -->
+    <script src="../scripts/main.js"></script>
+  </body>
+</html>

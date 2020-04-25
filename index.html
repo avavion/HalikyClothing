@@ -15,13 +15,13 @@
           <nav class="header-nav">
             <div class="header-nav__logo">
               <a href="#" class="header-nav__home">
-                <img src="./assets/logo.jpeg" alt="Logotype" />
+                <img src="./assets/logo.png" alt="Logotype" />
               </a>
             </div>
             <div class="header-nav__wrap">
               <div class="header-nav__cart">
-                <a href="#" class="header-nav__cart-link">
-                  <img src="./assets/cart.jpeg" alt="Cart" />
+                <a href="./pages/cart.html" class="header-nav__cart-link">
+                  <img src="./assets/cart-sign.png" alt="Cart" />
                 </a>
               </div>
               <div class="burger header-nav__burger">
@@ -72,7 +72,7 @@
               <div class="grid main-grid">
                 <!-- GRID ITEMS -->
 
-                <a class="grid-item main-grid-item" href="#">
+                <a class="grid-item main-grid-item" href="./pages/product.html">
                   <img src="./assets/example.png" alt="Фотография" class="grid-item__image main-grid-item__image" />
 
                   <div class="grid-item__description main-grid-item__description">
@@ -86,7 +86,7 @@
                   </div>
                 </a>
 
-                <a class="grid-item main-grid-item" href="#">
+                <a class="grid-item main-grid-item" href="./pages/product.html">
                   <img src="./assets/example.png" alt="Фотография" class="grid-item__image main-grid-item__image" />
 
                   <div class="grid-item__description main-grid-item__description">
@@ -100,7 +100,7 @@
                   </div>
                 </a>
 
-                <a class="grid-item main-grid-item" href="#">
+                <a class="grid-item main-grid-item" href="./pages/product.html">
                   <img src="./assets/example.png" alt="Фотография" class="grid-item__image main-grid-item__image" />
 
                   <div class="grid-item__description main-grid-item__description">
@@ -114,7 +114,7 @@
                   </div>
                 </a>
 
-                <a class="grid-item main-grid-item" href="#">
+                <a class="grid-item main-grid-item" href="./pages/product.html">
                   <img src="./assets/example.png" alt="Фотография" class="grid-item__image main-grid-item__image" />
 
                   <div class="grid-item__description main-grid-item__description">
@@ -128,7 +128,7 @@
                   </div>
                 </a>
 
-                <a class="grid-item main-grid-item" href="#">
+                <a class="grid-item main-grid-item" href="./pages/product.html">
                   <img src="./assets/example.png" alt="Фотография" class="grid-item__image main-grid-item__image" />
 
                   <div class="grid-item__description main-grid-item__description">
@@ -142,7 +142,7 @@
                   </div>
                 </a>
 
-                <a class="grid-item main-grid-item" href="#">
+                <a class="grid-item main-grid-item" href="./pages/product.html">
                   <img src="./assets/example.png" alt="Фотография" class="grid-item__image main-grid-item__image" />
 
                   <div class="grid-item__description main-grid-item__description">
@@ -163,19 +163,80 @@
         </div>
       </main>
 
-      <footer class="footer section" id="footer"></footer>
+      <footer class="footer" id="footer"></footer>
+    </div>
 
-      <div class="modal-overlay">
-        <div class="modal-window">
-          <a href="#" class="button__close modal-close">
-            <i class="fas fa-times"></i>
-          </a>
-          <div class="modal-header">
-            <h3 class="modal-header__title">
-              Модальное окно
-            </h3>
+    <div class="modal-overlay">
+      <div class="modal-window modal-pick-size">
+        <a href="#" class="button__close modal-close">
+          <i class="fas fa-times"></i>
+        </a>
+        <div class="modal">
+          <img src="../assets/example.png" alt="Товар">
+          <div class="modal-wrap modal-choose-size">
+            <div class="modal-header">
+              <h3 class="modal-header__title">
+                Мы поможем вам найти нужный размер
+              </h3>
+              <p class="modal-header__subtitle modal__text">
+                Мы подберем идеальный размер согласно вашим параметрам
+              </p>
+            </div>
+            <div class="modal-content">
+              <h3 class="modal-content__title">
+                Измерения:
+              </h3>
+              <p class="modal-content__text modal__text">Ваш рост и вес:</p>
+  
+              <div class="modal-content-inputs">
+                <div class="modal-content-input">
+                  <p class="modal-content-input__text">
+                    РОСТ
+                  </p>
+                  <input min="140" max="230" step="1" value="160" type="range" name="userHeight" id="heightInput" class="modal-content__input" />
+                  <p class="modal-content-input__size">
+                    <span id="modalHeightSize">140</span> СМ
+                  </p>
+                </div>
+                <div class="modal-content-input">
+                  <p class="modal-content-input__text">
+                    ВЕС
+                  </p>
+                  <input min="30" max="150" step="1" value="60" type="range" name="userWidth" id="widthInput" class="modal-content__input" />
+                  <p class="modal-content-input__size">
+                    <span id="modalWidthSize">30</span> КГ
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <a href="#" class="button button__secondary button__pickSize" id="modalShowSize">
+                Определите ваш размер
+              </a>
+            </div>
           </div>
-          <div class="modal-content"></div>
+
+          <div class="modal-wrap modal-user-size">
+            <div class="modal-header">
+              <h3 class="modal-header__title">
+                Ваш размер
+              </h3>
+              <p class="modal-header__subtitle modal__text" id="userSizeLabel">
+                L
+              </p>
+            </div>
+            <div class="modal-content">
+              <p class="modal-content__text modal__text">Этот размер носят 85% покупателей с похожим ростом и весом.</p>
+            </div>
+            <div class="modal-footer">
+              <a href="#" class="button button__secondary" id="prevModalWindow">
+                НАЧАТЬ СНАЧАЛА
+              </a>
+              <a href="#" class="button button__primary button__addToCart" id="modalShowSize">
+                Добавить в корзину
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>

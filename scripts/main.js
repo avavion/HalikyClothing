@@ -82,8 +82,54 @@ const burgerMenu = (triggerSelector, menuSelector, closeSelector) => {
   });
 };
 
+const pickSizeValid = (weightSelector, heightSelector, weightLabelSelector, heightLabelSelector, showButtonSelector, modalPickSizeSelector, userSizeSelector, prevButtonSelector) => {
+  const weightInput = document.querySelector(weightSelector),
+    heightInput = document.querySelector(heightSelector),
+    weightLabel = document.querySelector(weightLabelSelector),
+    heightLabel = document.querySelector(heightLabelSelector),
+    showButtonSize = document.querySelector(showButtonSelector),
+    modalPickSize = document.querySelector(modalPickSizeSelector),
+    userSize = document.querySelector(userSizeSelector),
+    prevButton = document.querySelector(prevButtonSelector);
+
+  heightLabel.textContent = heightInput.value;
+  weightLabel.textContent = weightInput.value;
+
+  heightInput.addEventListener("input", (event) => {
+    heightLabel.textContent = event.target.value;
+    if (event.target.value >= 140 && event.target.value <= 149) {
+      console.log(userSize.textContent);
+      userSize.textContent = "XS";
+    } else if (event.target.value >= 150 && event.target.value <= 169) {
+      console.log(userSize.textContent);
+      userSize.textContent = "S";
+    } else if (event.target.value >= 170 && event.target.value <= 180) {
+      console.log(userSize.textContent);
+      userSize.textContent = "M";
+    } else {
+      console.log(userSize.textContent);
+      userSize.textContent = "L";
+    }
+  });
+
+  weightInput.addEventListener("input", (event) => {
+    weightLabel.textContent = event.target.value;
+  });
+
+  showButtonSize.addEventListener("click", (event) => {
+    modalPickSize.style.display = "flex";
+    document.querySelector(".modal-choose-size").style.display = "none";
+  });
+
+  prevButton.addEventListener("click", () => {
+    modalPickSize.style.display = "none";
+    document.querySelector(".modal-choose-size").style.display = "flex";
+  });
+};
+
 // Когда DOM дерево построится, то вызываем все функции
 window.addEventListener("DOMContentLoaded", () => {
-  modalWindow(".main-grid-item", ".modal-overlay", ".modal-close");
+  modalWindow("#buttonPickSize", ".modal-overlay", ".modal-close");
+  pickSizeValid("#widthInput", "#heightInput", "#modalWidthSize", "#modalHeightSize", "#modalShowSize", ".modal-user-size", "#userSizeLabel", "#prevModalWindow");
   burgerMenu(".header-nav__burger", ".main-aside-mobile", ".main-aside-mobile__closeButton");
 });
